@@ -1,5 +1,6 @@
 import { useState } from "react"
 import SearchComponent from "./component/SearchComponent"
+import FoodListComponent from "./component/FoodListComponent"
 
 function App() {
   const [foodResult, setFoodResult] = useState([])
@@ -7,9 +8,7 @@ function App() {
   return (
     <div >
       <SearchComponent foodResult={foodResult} setFoodResult={setFoodResult} />
-      <ul>
-        {foodResult.map((foodItem, index) => <h1 key={index}>{foodItem.title}</h1>)}
-      </ul>
+      <FoodListComponent foodResult={foodResult} />
     </div>
   )
 }
