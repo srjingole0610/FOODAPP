@@ -1,8 +1,9 @@
 import { useState } from "react"
 import SearchComponent from "./component/SearchComponent"
-import FoodListComponent from "./component/FoodListComponent"
 import NavbarComponent from "./component/NavbarComponent"
 import './App.css'
+import FoodContainer from "./component/FoodContainer"
+import FoodListComponent from "./component/FoodListComponent"
 
 function App() {
   const [foodResult, setFoodResult] = useState([])
@@ -11,7 +12,9 @@ function App() {
     <div >
       <NavbarComponent />
       <SearchComponent foodResult={foodResult} setFoodResult={setFoodResult} />
-      <FoodListComponent foodResult={foodResult} />
+      <FoodContainer>
+        <FoodListComponent foodResult={foodResult} />
+      </FoodContainer>
     </div>
   )
 }
