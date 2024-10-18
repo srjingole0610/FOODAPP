@@ -1,0 +1,33 @@
+.navbar{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px !important;
+    background-color: #00b894;
+    color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: glow 1s ease-in-out infinite alternate;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.header{
+    transition: all 0.5s ease-in-out;
+}
+.header:hover{
+    transform: scale(1.2);
+   
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00b894, 0 0 40px #00b894, 0 0 70px #00b894, 0 0 80px #00b894, 0 0 100px #00b894;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #00b894, 0 0 40px #00b894, 0 0 50px #00b894, 0 0 60px #00b894, 0 0 70px #00b894, 0 0 80px #00b894, 0 0 100px #00b894;
+    }
+}
+
