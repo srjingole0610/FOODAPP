@@ -6,14 +6,14 @@ function SearchComponent({ foodResult, setFoodResult }) {
     const URL = "https://api.spoonacular.com/recipes/complexSearch"
     const API_KEY = "b1b6bd6fae0642bb93dcf4fd947f2ec8"
 
-    // useEffect(() => {
-    //     const fetchFood = async () => {
-    //         const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`)
-    //         const parsedResponse = await response.json()
-    //         setFoodResult(parsedResponse.results)
-    //     }
-    //     fetchFood();
-    // }, [query])
+    useEffect(() => {
+        const fetchFood = async () => {
+            const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`)
+            const parsedResponse = await response.json()
+            setFoodResult(parsedResponse.results)
+        }
+        fetchFood();
+    }, [query])
 
     const handleInputChange = (event) => {
         setQuery(event.target.value)
