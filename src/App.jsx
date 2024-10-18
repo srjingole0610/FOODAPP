@@ -1,8 +1,10 @@
+import SearchComponent from "./component/SearchComponent"
+
 function App() {
 
   return (
     <div >
-      <h1>FGOOD APP</h1>
+      <SearchComponent />
     </div>
   )
 }
