@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styles from './search.module.css'
 
 function SearchComponent({ foodResult, setFoodResult }) {
     const [query, setQuery] = useState("pizza")
@@ -18,8 +19,8 @@ function SearchComponent({ foodResult, setFoodResult }) {
         setQuery(event.target.value)
     }
     return (
-        <div>
-            <input onChange={handleInputChange} type="text" placeholder='Enter your Reciepe' value={query} />
+        <div className={styles.searchContainer}>
+            <input className={styles.searchInput} onChange={handleInputChange} type="text" placeholder='Enter your Reciepe' value={query} />
         </div>
     )
 }
