@@ -1,22 +1,25 @@
-import { useState } from "react"
-import SearchComponent from "./component/SearchComponent"
-import NavbarComponent from "./component/NavbarComponent"
-import './App.css'
-import FoodContainer from "./component/FoodContainer"
-import FoodListComponent from "./component/FoodListComponent"
+import { useState } from "react";
+import SearchComponent from "./component/SearchComponent";
+import NavbarComponent from "./component/NavbarComponent";
+import "./App.css";
+import FoodContainer from "./component/FoodContainer";
+import FoodListComponent from "./component/FoodListComponent";
+import InnerComponent from "./component/InnerComponent";
 
 function App() {
-  const [foodResult, setFoodResult] = useState([])
+  const [foodResult, setFoodResult] = useState([]);
 
   return (
-    <div >
+    <div>
       <NavbarComponent />
       <SearchComponent foodResult={foodResult} setFoodResult={setFoodResult} />
       <FoodContainer>
-        <FoodListComponent foodResult={foodResult} />
+        <InnerComponent>
+          <FoodListComponent foodResult={foodResult} />
+        </InnerComponent>
       </FoodContainer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
