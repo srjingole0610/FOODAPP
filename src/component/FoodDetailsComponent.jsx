@@ -43,9 +43,22 @@ function FoodDetailsComponent({ foodID }) {
                             <span>${(Math.round(foodRecipe.pricePerServing) / 100).toFixed(2)} Per Serving</span>
                         </div>
                     </div>
+                    <h2 className={styles.heading}>
+                        Ingredients
+                    </h2>
+                    <div className={styles.ingredientsContainer}>
+
+                        {foodRecipe.extendedIngredients.map((item) => (
+                            <div className={styles.ingredientItem} key={item.id}>
+                                <img className={styles.ingredientImage} src={`https://spoonacular.com/cdn/ingredients_100x100/` + item.image} alt={item.name} />
+                                <h3 className={styles.ingredientName}>{item.name}</h3>
+                                <h3 className={styles.ingredientAmount}>{item.amount} {item.unit}</h3>
+                            </div>
+                        ))}
+                    </div>
                     <div className={styles.instructions}>
                         <h2 className={styles.heading}>Instructions:</h2>
-                        {isLoading ? ("Instructions are getting loaded") : (foodRecipe.analyzedInstructions[0].steps.map((step) => (<li className={styles.step} key={step.number}>{step.step}</li>)))}
+                        {isLoading ? ("Instructions are getting loaded") : (foodRecipe.analyzedInstructions[0].steps.map((step) => (<li className={styles.step} key={step.number}>{step.number}.{step.step}</li>)))}
                     </div>
                 </div>
             ) : null}
