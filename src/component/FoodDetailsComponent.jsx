@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './fooddetails.module.css'
+import IngredientsComponent from './IngredientsComponent'
 
 function FoodDetailsComponent({ foodID }) {
     const URL = `https://api.spoonacular.com/recipes/${foodID}/information`
@@ -46,15 +47,8 @@ function FoodDetailsComponent({ foodID }) {
                     <h2 className={styles.heading}>
                         Ingredients
                     </h2>
-                    <div className={styles.ingredientsContainer}>
-
-                        {foodRecipe.extendedIngredients.map((item) => (
-                            <div className={styles.ingredientItem} key={item.id}>
-                                <img className={styles.ingredientImage} src={`https://spoonacular.com/cdn/ingredients_100x100/` + item.image} alt={item.name} />
-                                <h3 className={styles.ingredientName}>{item.name}</h3>
-                                <h3 className={styles.ingredientAmount}>{item.amount} {item.unit}</h3>
-                            </div>
-                        ))}
+                    <div>
+                        <IngredientsComponent foodRecipe={foodRecipe} isLoading={isLoading} />
                     </div>
                     <div className={styles.instructions}>
                         <h2 className={styles.heading}>Instructions:</h2>
