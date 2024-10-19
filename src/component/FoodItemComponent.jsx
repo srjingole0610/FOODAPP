@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './foodItem.module.css'
 
-function FoodItemComponent({ foodItem, index }) {
+function FoodItemComponent({ foodItem, setFoodID }) {
     return (
         <div className={styles.itemContainer}>
             <img className={styles.itemImage} src={foodItem.image} alt="" />
@@ -10,7 +10,7 @@ function FoodItemComponent({ foodItem, index }) {
             </div>
             <div className={styles.buttonContainer}>
 
-                <button className={styles.itemButton}>View Recipe</button>
+                <button onClick={() => setFoodID(foodItem.id)} className={styles.itemButton}>View Recipe</button>
             </div>
         </div>
     )
