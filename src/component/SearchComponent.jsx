@@ -4,7 +4,7 @@ import styles from './search.module.css'
 function SearchComponent({ foodResult, setFoodResult }) {
     const [query, setQuery] = useState("pizza")
     const URL = "https://api.spoonacular.com/recipes/complexSearch"
-    const API_KEY = "b1b6bd6fae0642bb93dcf4fd947f2ec8"
+    const API_KEY = "47070d583718496ba2a9347a5b86809a"
 
     useEffect(() => {
         const fetchFood = async () => {

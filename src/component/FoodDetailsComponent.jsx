@@ -3,7 +3,7 @@ import styles from './fooddetails.module.css'
 
 function FoodDetailsComponent({ foodID }) {
     const URL = `https://api.spoonacular.com/recipes/${foodID}/information`
-    const API_KEY = 'b1b6bd6fae0642bb93dcf4fd947f2ec8'
+    const API_KEY = '47070d583718496ba2a9347a5b86809a'
     const [foodRecipe, setFoodRecipe] = useState({})
     const [isLoading, setLoading] = useState(true)
 
@@ -14,7 +14,7 @@ function FoodDetailsComponent({ foodID }) {
             const parsedResponse = await response.json()
             setFoodRecipe(parsedResponse)
             console.log(parsedResponse)
-            isLoading(false)
+            setLoading(false)
 
         }
         fetchFoodRecipe();
@@ -22,26 +22,30 @@ function FoodDetailsComponent({ foodID }) {
     return (
         <>
             {foodID ? (
-                <div>
-                    <h1>{foodID ? `Food Details: ${foodID}` : ''}</h1>
-                    <div>
-                        <h1>{foodRecipe.title}</h1>
-                        <img src={foodRecipe.image} alt="" />
+                <div className={styles.container}>
+                    <h1 className={styles.title}>Food Details: {foodID}</h1>
+                    <div className={styles.imageContainer}>
+                        <img className={styles.image} src={foodRecipe.image} alt="" />
                     </div>
-                    <div>
-                        <span><strong>🕛Prep Time:{foodRecipe.readyInMinutes} Minutes</strong></span>
-                        <span><strong>👨‍👩‍👧‍👦Serves For:{foodRecipe.servings}</strong></span>
-                        <span>{foodRecipe.vegetarian ? "🥕 Vegetarian" : "🍖 Non-Vegetarian"}</span>
-                        <span>{foodRecipe.vegan ? "Vegan " : ""}</span>
-
+                    <div className={styles.infoContainer}>
+                        <h2 className={styles.heading}>{foodRecipe.title}</h2>
+                        <div className={styles.prepTime}>
+                            <span><strong>🕛Prep Time:</strong> {foodRecipe.readyInMinutes} Minutes</span>
+                        </div>
+                        <div className={styles.serves}>
+                            <span><strong>👨‍👩‍👧‍👦Serves For:</strong> {foodRecipe.servings}</span>
+                        </div>
+                        <div className={styles.diet}>
+                            <span>{foodRecipe.vegetarian ? "🥕Vegetarian " : "🍖Non-Vegetarian"}</span>
+                            <span>{foodRecipe.vegan ? "Vegan " : ""}</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span>${(Math.round(foodRecipe.pricePerServing) / 100).toFixed(2)} Per Serving</span>
+                        </div>
                     </div>
-                    <div>
-                        <span>${(Math.round(foodRecipe.pricePerServing) / 100).toFixed(2)} Per Serving</span>
-                    </div>
-                    <div>
-                        <h2>Instructions:</h2>
-                        {isLoading ? ("Instructions are getting loaded") : (foodRecipe.analyzedInstructions[0].steps.map((step) => (<li key={step.number}>{step.step}</li>)))}
-
+                    <div className={styles.instructions}>
+                        <h2 className={styles.heading}>Instructions:</h2>
+                        {isLoading ? ("Instructions are getting loaded") : (foodRecipe.analyzedInstructions[0].steps.map((step) => (<li className={styles.step} key={step.number}>{step.step}</li>)))}
                     </div>
                 </div>
             ) : null}
@@ -50,3 +54,4 @@ function FoodDetailsComponent({ foodID }) {
 }
 
 export default FoodDetailsComponent
+

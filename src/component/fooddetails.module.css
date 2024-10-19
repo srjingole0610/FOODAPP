@@ -1,0 +1,163 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.title:hover {
+    color: #00b894;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imageContainer:hover .image {
+    transform: scale(1.1);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.heading {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333333;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.heading:hover {
+    color: #00b894;
+}
+
+.prepTime {
+    margin-bottom: 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.prepTime:hover {
+    color: #00b894;
+}
+
+.serves {
+    margin-bottom: 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.serves:hover {
+    color: #00b894;
+}
+
+.diet {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.diet:hover {
+    color: #00b894;
+}
+
+.vegetarian {
+    margin-right: 12px;
+    color: green;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.vegetarian:hover {
+    color: #00b894;
+}
+
+.vegan {
+    color: blue;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.vegan:hover {
+    color: #00b894;
+}
+
+.price {
+    margin-bottom: 25px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.price:hover {
+    color: #00b894;
+}
+
+.instructions {
+    width: 100%;
+    padding: 25px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.step {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #666666;
+    list-style: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.step:hover {
+    color: #00b894;
+}
+
