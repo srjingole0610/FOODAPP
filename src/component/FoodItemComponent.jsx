@@ -2,6 +2,9 @@ import React from 'react'
 import styles from './foodItem.module.css'
 
 function FoodItemComponent({ foodItem, setFoodID }) {
+    const setFoodIDs = () => {
+        setFoodID(foodItem.id)
+    }
     return (
         <div className={styles.itemContainer}>
             <img className={styles.itemImage} src={foodItem.image} alt="" />
@@ -10,7 +13,7 @@ function FoodItemComponent({ foodItem, setFoodID }) {
             </div>
             <div className={styles.buttonContainer}>
 
-                <button onClick={() => setFoodID(foodItem.id)} className={styles.itemButton}>View Recipe</button>
+                <button onClick={setFoodIDs} className={styles.itemButton}>View Recipe</button>
             </div>
         </div>
     )
